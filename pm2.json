@@ -1,0 +1,16 @@
+{
+  "apps": [{
+    "name": "billyn-thinkjs",
+    "script": "www/production.js",
+    "cwd": "/Users/jianfeng/Desktop/project/thinkjs/github/billyn-thinkjs",
+    "exec_mode": "cluster",
+    "instances": 0,
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
