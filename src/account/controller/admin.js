@@ -50,33 +50,32 @@ export default class extends Base {
 
   async loginAction() {
  
-    let userName = this.post("name");
-    let email = this.post("email");
+    let loginId = this.post("loginId");  
     let paramPassword = this.post("password");
-    console.log(userName);
-    console.log(email);
+    
+    console.log(loginId);
     console.log(paramPassword);
 
     let model = this.model("user");
     let data;
     
-    if (think.isEmpty(userName)) {
+   
 
       data = await model.where({
-        Email: email,
+        Email: loginId,
         Password: think.md5(paramPassword)
       }).find();
-      console.log("find user by email: " + data._id + "   "+ data.Email + " " + data.Name);
-    }
-    else {
+      
+   
+    if(think.isEmpty(data)) {
       data = await model.where({
-        Name: userName,
+        Name: loginId,
         Password: think.md5(paramPassword)
       }).find();
-
-      console.log("find user by name: " + data._id + "   "+ data.Email + " " + data.Name);
     }
-
+    
+     console.log("find user by name: " + data._id + "   "+ data.Email + " " + data.Name);
+   
 
     if (!think.isEmpty(data)) {
     
@@ -98,6 +97,5 @@ export default class extends Base {
       return this.fail("NEED_LOGIN");
     }
   }//end of loginAction
-
 
 }
