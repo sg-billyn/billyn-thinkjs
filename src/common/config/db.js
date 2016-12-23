@@ -9,9 +9,9 @@ export default {
     mysql: {
       host: '127.0.0.1',
       port: '',
-      database: '',
-      user: '',
-      password: '',
+      database: 'billyn',
+      user: 'billyn',
+      password: 'billyn',
       prefix: '',
       encoding: 'utf8'
     },
